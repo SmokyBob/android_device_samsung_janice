@@ -48,7 +48,7 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-TARGET_RECOVERY_INITRC := device/samsung/galaxys2-common/recovery.rc
+TARGET_RECOVERY_INITRC := device/samsung/janice/recovery.rc
 
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
@@ -64,11 +64,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Releasetools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/galaxys2-common/releasetools/galaxys2_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/galaxys2-common/releasetools/galaxys2_img_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/galaxys2_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/galaxys2_img_from_target_files
 
 # Graphics
-BOARD_EGL_CFG := device/samsung/galaxys2-common/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/janice/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Enable WEBGL in WebKit
@@ -134,40 +134,40 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys2-common/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/galaxys2-common/recovery/graphics.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_keys.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/janice/recovery/graphics.c
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/overlay/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/overlay/include
 
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
-BOARD_CHARGER_RES := device/samsung/galaxys2-common/res/charger
+BOARD_CHARGER_RES := device/samsung/janice/res/charger
 
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/janice/shbootimg.mk
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/galaxys2-common/BoardConfigVendor.mk
+#-include vendor/samsung/galaxys2-common/BoardConfigVendor.mk
 
 
 ######################################################################################################
 
 
-TARGET_BOARD_INFO_FILE := device/samsung/i9100/board-info.txt
+TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4210
-TARGET_KERNEL_CONFIG := cyanogenmod_i9100_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/u8500
+TARGET_KERNEL_CONFIG := cyanogenmod_janice_defconfig
 
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/i9100/overlay/include
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/janice/overlay/include
 EXYNOS4210_ENHANCEMENTS := true
 # assert
-TARGET_OTA_ASSERT_DEVICE := galaxys2,i9100,GT-I9100,GT-I9100M,GT-I9100P,GT-I9100T
+TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/i9100/BoardConfigVendor.mk
+#-include vendor/samsung/i9100/BoardConfigVendor.mk

@@ -1,11 +1,8 @@
 [
     {
-        "repository": "android_device_samsung_galaxys2-common",
-        "target_path": "device/samsung/galaxys2-common"
-    },
-    {
-        "repository": "android_kernel_samsung_smdk4210",
-        "target_path": "kernel/samsung/smdk4210"
+        "repository": "android_kernel_samsung_u8500",
+        "target_path": "kernel/samsung/u8500",
+	"branch": "master"
     },
     {
         "repository": "android_hardware_samsung",

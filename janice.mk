@@ -18,22 +18,22 @@
 # Include common makefile
 # $(call inherit-product, device/samsung/galaxys2-common/common.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/samsung/galaxys2-common/overlay
+DEVICE_PACKAGE_OVERLAYS := device/samsung/janice/overlay
 
 # Init files
 PRODUCT_COPY_FILES := \
-    device/samsung/galaxys2-common/lpm.rc:root/lpm.rc \
-    device/samsung/galaxys2-common/init.smdk4210.usb.rc:root/init.smdk4210.usb.rc \
-    device/samsung/galaxys2-common/init.smdk4210.rc:root/init.smdk4210.rc \
-    device/samsung/galaxys2-common/ueventd.smdk4210.rc:root/ueventd.smdk4210.rc
+    device/samsung/janice/lpm.rc:root/lpm.rc \
+    device/samsung/janice/init.smdk4210.usb.rc:root/init.smdk4210.usb.rc \
+    device/samsung/janice/init.smdk4210.rc:root/init.smdk4210.rc \
+    device/samsung/janice/ueventd.smdk4210.rc:root/ueventd.smdk4210.rc
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2-common/configs/asound.conf:system/etc/asound.conf
+    device/samsung/janice/configs/asound.conf:system/etc/asound.conf
 
 # Vold and Storage
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2-common/configs/vold.fstab:system/etc/vold.fstab
+    device/samsung/janice/configs/vold.fstab:system/etc/vold.fstab
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
@@ -41,8 +41,8 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2-common/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/samsung/galaxys2-common/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+    device/samsung/janice/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/samsung/janice/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -52,8 +52,8 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330
 
 # Gps
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2-common/configs/gps.conf:system/etc/gps.conf \
-    device/samsung/galaxys2-common/configs/sirfgps.conf:system/etc/sirfgps.conf
+    device/samsung/janice/configs/gps.conf:system/etc/gps.conf \
+    device/samsung/janice/configs/sirfgps.conf:system/etc/sirfgps.conf
 
 # Packages
 PRODUCT_PACKAGES := \
@@ -102,8 +102,8 @@ PRODUCT_PACKAGES += \
     libOMX.SEC.MP3.Decoder
 
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/samsung/galaxys2-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/samsung/janice/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/samsung/janice/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -178,13 +178,13 @@ TARGET_OMX_PATH := hardware/samsung/exynos/multimedia/openmax
 $(call inherit-product, hardware/samsung/exynos4210.mk)
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/galaxys2-common/common-vendor.mk
+#-include vendor/samsung/galaxys2-common/common-vendor.mk
 
 
 ######################################################################################################
 
 
-LOCAL_PATH := device/samsung/i9100
+LOCAL_PATH := device/samsung/janice
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
