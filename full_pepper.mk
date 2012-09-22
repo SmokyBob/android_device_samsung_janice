@@ -30,14 +30,14 @@ PRODUCT_PACKAGES := \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 #charging animation
-$(call inherit-product, device/sony/montblanc-common/prebuilt/resources-mdpi.mk)
+$(call inherit-product, device/sony/u8500-common/prebuilt/resources-mdpi.mk)
 
 # Inherit from nypon device
-$(call inherit-product, device/sony/pepper/pepper.mk)
+$(call inherit-product, device/samsung/janice/janice.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_pepper
-PRODUCT_DEVICE := pepper
-PRODUCT_BRAND := Sony
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_MODEL := Xperia Sola
+PRODUCT_NAME := full_janice
+PRODUCT_DEVICE := janice
+PRODUCT_BRAND := Samsung
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_MODEL := GT-I9070

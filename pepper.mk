@@ -15,12 +15,12 @@
 #
 
 # Inherit the proprietary counterpart
-$(call inherit-product-if-exists, vendor/sony/pepper/pepper-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/sony/pepper/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/janice/overlay
 
 # Inherit the montblanc-common definitions
-$(call inherit-product, device/sony/montblanc-common/montblanc.mk)
+$(call inherit-product, device/samsung/u8500-common/montblanc.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)

@@ -1,14 +1,14 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/sony/pepper/BoardConfigVendor.mk
+-include vendor/samsung/janice/BoardConfigVendor.mk
 
 #inherit from the common montblanc definitions
--include device/sony/montblanc-common/BoardConfigCommon.mk
+-include device/samsung/u8500-common/BoardConfigCommon.mk
 
-TARGET_KERNEL_SOURCE := kernel/sony/u8500
-TARGET_KERNEL_CONFIG := cyanogen_pepper_defconfig
-#TARGET_PREBUILT_KERNEL := device/sony/pepper/prebuilt/kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/u8500
+TARGET_KERNEL_CONFIG := cyanogen_janice_defconfig
+#TARGET_PREBUILT_KERNEL := device/samsung/janice/prebuilt/kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
 # Choosing sensors for DASH
@@ -31,6 +31,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p14
+BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p8
 
-TARGET_OTA_ASSERT_DEVICE := MT27i,MT27a,pepper
+TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070

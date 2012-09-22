@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VENDOR=sony
-DEVICE=pepper
+VENDOR=samsung
+DEVICE=janice
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 

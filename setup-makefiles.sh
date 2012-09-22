@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VENDOR=sony
-DEVICE=pepper
+VENDOR=samsung
+DEVICE=janice
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

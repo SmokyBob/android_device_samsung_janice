@@ -1,15 +1,16 @@
 [
   {
-    "repository": "android_device_sony_montblanc-common",
-    "target_path": "device/sony/montblanc-common"
+    "repository": "android_device_samsung_u8500-common",
+    "target_path": "device/samsung/u8500-common",
+    "branch": "ics"
+  },
+  {
+    "repository": "android_kernel_samsung_u8500",
+    "target_path": "kernel/samsung/u8500",
+    "branch": "master"
   },
   {
     "repository": "android_hardware_sony_DASH",
     "target_path": "hardware/somc/dash"
-  },
-  {
-    "repository": "sony-kernel-u8500",
-    "target_path": "kernel/sony/u8500",
-    "branch": "ics"
   }
 ]
