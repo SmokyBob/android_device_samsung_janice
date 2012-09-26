@@ -6,7 +6,7 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 # Inherit CM common Phone stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=MT27i_1262-1482 BUILD_FINGERPRINT=SEMC/MT27i_1262-1482/MT27i:4.0.4/6.1.B.0.544/R7P_zw:user/release-keys PRIVATE_BUILD_DESC="MT27i-user 4.0.4 6.1.B.0.544 R7P_zw test-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="samsung/GT-I9070/GT-I9070:2.3.6/GINGERBREAD/VJLD1:user/release-keys" PRIVATE_BUILD_DESC="GT-I9070-user 2.3.6 GINGERBREAD VJLD1 release-keys"
 
 TARGET_BOOTANIMATION_NAME := vertical-480x854
 
