@@ -20,7 +20,7 @@ $(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/janice/overlay
 
 # Inherit the montblanc-common definitions
-$(call inherit-product, device/samsung/u8500-common/montblanc.mk)
+$(call inherit-product, device/samsung/u8500-common/u8500-common.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
@@ -38,7 +38,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Configuration scripts
 PRODUCT_COPY_FILES += \
-   device/sony/montblanc-common/prebuilt/logo.rle:root/logo.rle \
+   device/samsung/u8500-common/prebuilt/logo.rle:root/logo.rle \
 
 
 # Configuration scripts
@@ -80,13 +80,13 @@ PRODUCT_COPY_FILES += \
 
 #Offline charging animation
 PRODUCT_COPY_FILES += \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_01.png:system/semc/chargemon/data/charging_animation_01.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_02.png:system/semc/chargemon/data/charging_animation_02.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_03.png:system/semc/chargemon/data/charging_animation_03.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_04.png:system/semc/chargemon/data/charging_animation_04.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_05.png:system/semc/chargemon/data/charging_animation_05.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_06.png:system/semc/chargemon/data/charging_animation_06.png \
-    device/sony/montblanc-common/prebuilt/animations/charging_animation_07.png:system/semc/chargemon/data/charging_animation_07.png
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_01.png:system/semc/chargemon/data/charging_animation_01.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_02.png:system/semc/chargemon/data/charging_animation_02.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_03.png:system/semc/chargemon/data/charging_animation_03.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_04.png:system/semc/chargemon/data/charging_animation_04.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_05.png:system/semc/chargemon/data/charging_animation_05.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_06.png:system/semc/chargemon/data/charging_animation_06.png \
+    device/samsung/u8500-common/prebuilt/animations/charging_animation_07.png:system/semc/chargemon/data/charging_animation_07.png
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 

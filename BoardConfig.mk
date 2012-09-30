@@ -3,11 +3,11 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/janice/BoardConfigVendor.mk
 
-#inherit from the common montblanc definitions
+#inherit from the common u8500 definitions
 -include device/samsung/u8500-common/BoardConfigCommon.mk
 
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
-TARGET_KERNEL_CONFIG := cyanogen_janice_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_janice_defconfig
 #TARGET_PREBUILT_KERNEL := device/samsung/janice/prebuilt/kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
