@@ -15,8 +15,7 @@
 #
 
 ######################################################################################################
-# Include common makefile
-# $(call inherit-product, device/samsung/galaxys2-common/common.mk)
+# common makefile entries
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/janice/overlay
 
@@ -57,8 +56,8 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES := \
-	audio.a2dp.default \
-	libaudiohw_legacy \
+    audio.a2dp.default \
+    libaudiohw_legacy \
     camera.exynos4 \
     libsurfaceflinger_client \
     com.android.future.usb.accessory \
@@ -177,12 +176,7 @@ TARGET_HAL_PATH := hardware/samsung/exynos4/hal
 TARGET_OMX_PATH := hardware/samsung/exynos/multimedia/openmax
 $(call inherit-product, hardware/samsung/exynos4210.mk)
 
-# Use the non-open-source parts, if they're present
-#-include vendor/samsung/galaxys2-common/common-vendor.mk
-
-
-######################################################################################################
-
+#
 
 LOCAL_PATH := device/samsung/janice
 
@@ -208,29 +202,19 @@ PRODUCT_PACKAGES += \
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    $(LOCAL_PATH)/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
-    $(LOCAL_PATH)/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/usr/keylayout/max8997-muic.kl:system/usr/keylayout/max8997-muic.kl \
-    $(LOCAL_PATH)/usr/keylayout/melfas-touchkey.kl:system/usr/keylayout/melfas-touchkey.kl \
+    $(LOCAL_PATH)/usr/keylayout/Broadcom_Bluetooth_HID.kl:system/usr/keylayout/Broadcom_Bluetooth_HID.kl \
+    $(LOCAL_PATH)/usr/keylayout/janice-kp.kl:system/usr/keylayout/janice-kp.kl \
     $(LOCAL_PATH)/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    $(LOCAL_PATH)/usr/keylayout/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-    $(LOCAL_PATH)/usr/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-    $(LOCAL_PATH)/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl
+    $(LOCAL_PATH)/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_04E8_Product_7021.kl:system/usr/keylayout/Vendor_04E8_Product_7021.kl
 
 # Keychars
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-    $(LOCAL_PATH)/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    $(LOCAL_PATH)/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    $(LOCAL_PATH)/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm
+    $(LOCAL_PATH)/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin:system/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin \
+    $(LOCAL_PATH)/usr/keychars/janice-kp.kcm.bin:system/usr/keychars/janice-kp.kcm.bin \
+    $(LOCAL_PATH)/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    $(LOCAL_PATH)/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    $(LOCAL_PATH)/usr/keychars/Vendor_04E8_Product_7921.kcm.bin:system/usr/keychars/Vendor_04E8_Product_7921.kcm.bin
 
 # Idc
 PRODUCT_COPY_FILES += \
@@ -240,4 +224,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
     $(LOCAL_PATH)/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
-$(call inherit-product-if-exists, vendor/samsung/i9100/i9100-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)

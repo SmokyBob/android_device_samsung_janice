@@ -17,9 +17,6 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
-######################################################################################################
-# -include device/samsung/galaxys2-common/BoardCommonConfig.mk
-
 USE_CAMERA_STUB := true
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_LIBSECRIL_STUB := true
@@ -39,9 +36,9 @@ COMMON_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
 COMMON_GLOBAL_CFLAGS += -DSURFACEFLINGER_FORCE_SCREEN_RELEASE
 endif
 
-TARGET_BOARD_PLATFORM := exynos4
-TARGET_SOC := exynos4210
-TARGET_BOOTLOADER_BOARD_NAME := smdk4210
+TARGET_BOARD_PLATFORM := ux500
+TARGET_SOC := u8500
+TARGET_BOOTLOADER_BOARD_NAME := ux500
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -58,14 +55,14 @@ BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 641728512
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Releasetools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/galaxys2_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/galaxys2_img_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/janice_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/janice/releasetools/janice_img_from_target_files
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/janice/configs/egl.cfg
@@ -131,12 +128,12 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_VOLD_MAX_PARTITIONS := 12
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/usb_mass_storage/lun%d/file"
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/janice/recovery/graphics.c
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
+BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -145,18 +142,13 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/overlay/include
 
 # Charging mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGER_RES := device/samsung/janice/res/charger
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/janice/shbootimg.mk
 
-# Use the non-open-source parts, if they're present
-#-include vendor/samsung/galaxys2-common/BoardConfigVendor.mk
-
-
-######################################################################################################
-
+#
 
 TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 
@@ -164,10 +156,9 @@ TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
 TARGET_KERNEL_CONFIG := cyanogenmod_janice_defconfig
 
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/janice/overlay/include
-EXYNOS4210_ENHANCEMENTS := true
 # assert
 TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
 
+
 # Use the non-open-source parts, if they're present
-#-include vendor/samsung/i9100/BoardConfigVendor.mk
+#-include vendor/samsung/janice/BoardConfigVendor.mk
