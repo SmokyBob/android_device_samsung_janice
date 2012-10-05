@@ -7,8 +7,9 @@ USE_CAMERA_STUB := true
 -include device/samsung/u8500-common/BoardConfigCommon.mk
 
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
+#TARGET_KERNEL_SOURCE := /home/xubuntu/git/android_kernel_samsung_janice
 TARGET_KERNEL_CONFIG := cyanogenmod_janice_defconfig
-#TARGET_PREBUILT_KERNEL := device/samsung/janice/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/janice/prebuilt/kernel.bin.md5
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
 # Choosing sensors for DASH
