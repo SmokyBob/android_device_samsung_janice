@@ -19,8 +19,8 @@
 
 
 VENDOR=samsung
-COMMON=galaxys2-common
-DEVICE=i9100
+COMMON=u8500-common
+DEVICE=janice
 COMMONOUTDIR=vendor/$VENDOR/$COMMON
 COMMONBASE=../../../$COMMONOUTDIR/proprietary
 COMMONMAKEFILE=../../../$COMMONOUTDIR/common-vendor-blobs.mk
